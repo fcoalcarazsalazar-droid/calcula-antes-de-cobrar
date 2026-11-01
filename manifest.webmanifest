@@ -1,0 +1,18 @@
+{
+  "name": "Calcula antes de cobrar",
+  "short_name": "Calcula antes",
+  "description": "Calculadora de costos y precios para emprendedores",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f7f4",
+  "theme_color": "#173f35",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
