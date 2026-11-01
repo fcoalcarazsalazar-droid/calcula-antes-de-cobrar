@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173f35"><meta name="description" content="Calcula costos, precios y ganancias."><title>Calcula antes de cobrar</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg">
 <style>
-:root{--ink:#18352d;--muted:#65756e;--green:#1d5948;--pale:#e6f1eb;--paper:#f5f7f4;--line:#dce5df}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,Arial,sans-serif}.top{background:linear-gradient(125deg,#153e33,#286b55);color:white;padding:30px 20px 65px}.wrap,main,footer{max-width:1040px;margin:auto}.brand{font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:#c9e0d3;font-weight:700}h1{font-size:clamp(30px,5vw,44px);line-height:1.1;margin:12px 0}.top p{color:#e0eee6;max-width:650px;margin:0}main{padding:0 18px;margin-top:-38px;position:relative}.intro{color:#eaf3ed;font-size:13px;margin-bottom:16px}.layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.85fr);gap:18px;align-items:start}.card,.result{border-radius:18px;padding:22px;box-shadow:0 12px 34px #16362b12}.card{background:white;border:1px solid var(--line)}h2{font-size:19px;margin:0 0 5px}.sub{font-size:13px;color:var(--muted);margin:0 0 18px}.section{font-weight:750;font-size:14px;margin:21px 0 10px;color:var(--green)}.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}label{display:block;font-size:13px;font-weight:650;margin-bottom:5px}input:not([type=checkbox]){width:100%;border:1px solid #cbd8d0;border-radius:10px;padding:11px 12px;font:inherit;color:var(--ink)}input:focus{outline:2px solid #9fc9b3}.hint{font-size:11px;color:var(--muted);margin-top:4px}.full{grid-column:1/-1}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}button{border:0;border-radius:10px;padding:12px 16px;font:700 14px system-ui;cursor:pointer}.primary{background:var(--green);color:white}.secondary{background:var(--pale);color:var(--green)}.ghost{background:#f1f3f1;color:#43544b}.result{position:sticky;top:16px;background:#173f35;color:white}.result h2{color:white}.result .sub{color:#c8ddd2}.price-label{font-size:13px;color:#c8ddd2;margin-top:18px}.price{font-size:clamp(34px,5vw,48px);font-weight:800;letter-spacing:-.04em}.metric{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-top:1px solid #ffffff26;font-size:14px}.metric strong{font-variant-numeric:tabular-nums}.note{font-size:12px;color:#d5e6dc;background:#ffffff12;border-radius:10px;padding:11px;margin-top:16px}.warning{font-size:12px;color:#765a1c;background:#fff5d9;border:1px solid #f0dfaa;padding:12px;border-radius:10px;margin-top:16px}.status{font-size:13px;color:var(--muted);min-height:20px;margin-top:10px}.help{margin-top:18px}.help details{border-top:1px solid var(--line);padding:12px 0}.help summary{font-weight:700;cursor:pointer}footer{padding:25px 18px 35px;color:var(--muted);font-size:12px}@media(max-width:760px){.layout{grid-template-columns:1fr}.result{position:static;order:-1}.card{padding:18px}}@media(max-width:430px){.fields{grid-template-columns:1fr}.full{grid-column:auto}}
+:root{--ink:#18352d;--muted:#65756e;--green:#1d5948;--pale:#e6f1eb;--paper:#f5f7f4;--line:#dce5df}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,Arial,sans-serif}.top{background:linear-gradient(125deg,#153e33,#286b55);color:white;padding:30px 20px 65px}.wrap,main,footer{max-width:1040px;margin:auto}.brand{font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:#c9e0d3;font-weight:700}h1{font-size:clamp(30px,5vw,44px);line-height:1.1;margin:12px 0}.top p{color:#e0eee6;max-width:650px;margin:0}main{padding:0 18px;margin-top:-38px;position:relative}.intro{color:#eaf3ed;font-size:13px;margin-bottom:16px}.layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.85fr);gap:18px;align-items:start}.card,.result{border-radius:18px;padding:22px;box-shadow:0 12px 34px #16362b12}.card{background:white;border:1px solid var(--line)}h2{font-size:19px;margin:0 0 5px}.sub{font-size:13px;color:var(--muted);margin:0 0 18px}.section{font-weight:750;font-size:14px;margin:21px 0 10px;color:var(--green)}.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}label{display:block;font-size:13px;font-weight:650;margin-bottom:5px}input:not([type=checkbox]){width:100%;border:1px solid #cbd8d0;border-radius:10px;padding:11px 12px;font:inherit;color:var(--ink)}input:focus{outline:2px solid #9fc9b3}.hint{font-size:11px;color:var(--muted);margin-top:4px}.full{grid-column:1/-1}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}button{border:0;border-radius:10px;padding:12px 16px;font:700 14px system-ui;cursor:pointer}.primary{background:var(--green);color:white}.secondary{background:var(--pale);color:var(--green)}.ghost{background:#f1f3f1;color:#43544b}.result{position:sticky;top:16px;background:#173f35;color:white}.result h2{color:white}.result .sub{color:#c8ddd2}.price-label{font-size:13px;color:#c8ddd2;margin-top:18px}.price{font-size:clamp(34px,5vw,48px);font-weight:800;letter-spacing:-.04em}.metric{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-top:1px solid #ffffff26;font-size:14px}.metric strong{font-variant-numeric:tabular-nums}.note{font-size:12px;color:#d5e6dc;background:#ffffff12;border-radius:10px;padding:11px;margin-top:16px}.warning{font-size:12px;color:#765a1c;background:#fff5d9;border:1px solid #f0dfaa;padding:12px;border-radius:10px;margin-top:16px}.license-gate{margin-bottom:18px}.license-gate[hidden],#appProtegida[hidden]{display:none!important}.status{font-size:13px;color:var(--muted);min-height:20px;margin-top:10px}.help{margin-top:18px}.help details{border-top:1px solid var(--line);padding:12px 0}.help summary{font-weight:700;cursor:pointer}footer{padding:25px 18px 35px;color:var(--muted);font-size:12px}@media(max-width:760px){.layout{grid-template-columns:1fr}.result{position:static;order:-1}.card{padding:18px}}@media(max-width:430px){.fields{grid-template-columns:1fr}.full{grid-column:auto}}
 </style></head><body>
 <header class="top"><div class="wrap"><div class="brand">Herramienta para emprendedores</div><h1>Calcula antes de cobrar</h1><p>Conoce cuánto te cuesta producir, cuánto deberías cobrar y cuánto te queda de ganancia.</p></div></header>
-<main><section class="card" style="margin-bottom:18px"><h2>Usa la calculadora desde tu celular</h2><p class="sub">Puedes instalarla para abrirla como una aplicación, sin la barra del navegador.</p><button class="primary" id="instalar" type="button">Instalar en mi celular</button><p class="status" id="estadoInstalacion" role="status" aria-live="polite"></p></section><div class="intro">Calculadora de costos y precios · Importes en pesos mexicanos (MXN)</div><div class="layout">
+<main><section class="card" style="margin-bottom:18px"><h2>Usa la calculadora desde tu celular</h2><p class="sub">Puedes instalarla para abrirla como una aplicación, sin la barra del navegador.</p><button class="primary" id="instalar" type="button">Instalar en mi celular</button><p class="status" id="estadoInstalacion" role="status" aria-live="polite"></p></section><section class="card license-gate" id="licenciaPanel"><h2>Activa tu calculadora</h2><p class="sub">Ingresa tu código de licencia. Puedes utilizarlo hasta en dos dispositivos y seguir calculando sin conexión después de activarlo.</p><label for="codigoLicencia">Código de licencia</label><input id="codigoLicencia" type="text" autocomplete="off" spellcheck="false" placeholder="Pega aquí tu código de licencia"><div class="actions"><button class="primary" id="activarLicencia" type="button">Activar licencia</button></div><p class="status" id="estadoLicencia" role="status" aria-live="polite"></p></section><div id="appProtegida" hidden><div class="intro">Calculadora de costos y precios · Importes en pesos mexicanos (MXN)</div><div class="layout">
 <section class="card"><h2>Completa tus costos</h2><p class="sub">Ingresa los datos de un lote. Puedes dejar en cero los conceptos que no apliquen.</p>
 <div class="section">1. Tu producto</div><div class="fields">
 <div class="full"><label for="producto">Nombre del producto</label><input id="producto" placeholder="Ej. Velas aromáticas" maxlength="80"></div>
@@ -26,7 +26,7 @@
 </section>
 <aside class="result" aria-live="polite"><h2>Tu resultado</h2><p class="sub">Se actualiza al cambiar tus datos.</p><div class="price-label">Precio sugerido por pieza</div><div class="price" id="precio">$0.00</div>
 <div class="metric"><span>Costo total del lote</span><strong id="totalLote">$0.00</strong></div><div class="metric"><span>Costo por pieza</span><strong id="costoUnitario">$0.00</strong></div><div class="metric"><span>Ganancia por pieza</span><strong id="ganancia">$0.00</strong></div><div class="metric"><span>Margen estimado</span><strong id="margenReal">0%</strong></div><div class="metric"><span>Comisión por pieza</span><strong id="comisionPesos">$0.00</strong></div><div class="note" id="detalle">Ingresa tus datos para obtener el cálculo.</div><div class="warning">Esta calculadora no incluye impuestos ni gastos generales (renta, internet o administración), salvo que los agregues en “Otros costos directos”. Revisa tus obligaciones fiscales antes de fijar tu precio.</div></aside>
-</div></main><footer>Calcula antes de cobrar · Herramienta de apoyo para tomar decisiones de precio. Los resultados son estimaciones según los datos ingresados.</footer>
+</div></div></main><footer>Calcula antes de cobrar · Herramienta de apoyo para tomar decisiones de precio. Los resultados son estimaciones según los datos ingresados.</footer>
 <script>
 const LICENSE_PUBLIC_KEY = `-----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5oEpHOAgEw7sKk2RUrO4
@@ -37,6 +37,68 @@ Y5oN89nys9VU5Rac3buaP9IM7MVLO7/rOsgRaAgxFPjijzGQ6Sos53RvhxcVgDyI
 fmUOKrOvhwpy2pBY1cWlVb++EHMKVv5r+LWF1R16LE321rE2UcYH8EvOR4vQM3jG
 awIDAQAB
 -----END PUBLIC KEY-----`;
+const LICENSE_SERVER = 'https://script.google.com/macros/s/AKfycbzRGB2TwS-h7FzMiUF83QgBqBitZ6tfvl8ztBGReV7dhOVuR_iM5IUtULtyf37fzlFFyQ/exec';
+const LICENSE_STORAGE = 'cac_autorizacion_v1';
+const DEVICE_STORAGE = 'cac_dispositivo_v1';
+let activationPopup = null;
+let activationNonce = null;
+let activationPending = false;
+const $lic = id => document.getElementById(id);
+function randomHex(bytes=16){const b=new Uint8Array(bytes);crypto.getRandomValues(b);return Array.from(b,x=>x.toString(16).padStart(2,'0')).join('');}
+function deviceId(){let id=localStorage.getItem(DEVICE_STORAGE);if(!id){id='cac-'+randomHex();localStorage.setItem(DEVICE_STORAGE,id);}return id;}
+function licenseStatus(msg){$lic('estadoLicencia').textContent=msg;}
+function unlockCalculator(){ $lic('licenciaPanel').hidden=true; $lic('appProtegida').hidden=false; }
+function lockCalculator(){ $lic('licenciaPanel').hidden=false; $lic('appProtegida').hidden=true; }
+function bytesFromBase64(b64){return Uint8Array.from(atob(b64.replace(/\s/g,'')),c=>c.charCodeAt(0));}
+let publicKeyPromise;
+function getPublicKey(){if(!publicKeyPromise){const der=bytesFromBase64(LICENSE_PUBLIC_KEY.replace(/-----[^-]+-----/g,''));publicKeyPromise=crypto.subtle.importKey('spki',der,{name:'RSASSA-PKCS1-v1_5',hash:'SHA-256'},false,['verify']);}return publicKeyPromise;}
+async function validateAuthorization(content,signature,expectedLicense){
+  if(typeof content!=='string'||typeof signature!=='string'||content.length>10000||signature.length>10000)return false;
+  const key=await getPublicKey();
+  const valid=await crypto.subtle.verify('RSASSA-PKCS1-v1_5',key,bytesFromBase64(signature),new TextEncoder().encode(content));
+  if(!valid)return false;
+  const a=JSON.parse(content);
+  return a && a.producto==='CALCULA-ANTES-DE-COBRAR' && a.version===1 && a.tipo==='PERPETUA' && a.dispositivoId===deviceId() && typeof a.licenciaId==='string' && a.licenciaId.length>0 && (!expectedLicense||a.licenciaId===expectedLicense);
+}
+async function restoreLicense(){
+  lockCalculator();
+  try{const saved=JSON.parse(localStorage.getItem(LICENSE_STORAGE)||'null');if(saved&&await validateAuthorization(saved.autorizacion,saved.firma)){unlockCalculator();return;}}
+  catch(e){console.warn('Autorización local no válida',e);}
+  localStorage.removeItem(LICENSE_STORAGE);
+  licenseStatus('Necesitas activar tu licencia para utilizar la calculadora.');
+}
+function isTrustedActivationOrigin(origin){try{const u=new URL(origin);return u.protocol==='https:'&&(u.hostname==='script.google.com'||u.hostname==='script.googleusercontent.com'||u.hostname.endsWith('.script.googleusercontent.com'));}catch{return false;}}
+window.addEventListener('message',async event=>{
+  if(!activationPending||!activationPopup||event.source!==activationPopup||!isTrustedActivationOrigin(event.origin))return;
+  const data=event.data;
+  if(!data||data.tipo!=='CAC_ACTIVACION'||data.nonce!==activationNonce)return;
+  activationPending=false;
+  const result=data.resultado;
+  if(!result||!result.ok){licenseStatus(result?.mensaje||'No se pudo activar la licencia.');return;}
+  try{
+    const requested=$lic('codigoLicencia').value.trim();
+    if(!await validateAuthorization(result.autorizacion,result.firma,requested))throw new Error('La firma o los datos de la autorización no coinciden.');
+    localStorage.setItem(LICENSE_STORAGE,JSON.stringify({autorizacion:result.autorizacion,firma:result.firma}));
+    unlockCalculator();
+    if(activationPopup&&!activationPopup.closed)activationPopup.close();
+  }catch(e){licenseStatus('No se pudo verificar la autorización: '+e.message);}
+});
+$lic('activarLicencia').addEventListener('click',()=>{
+  const license=$lic('codigoLicencia').value.trim();
+  if(!license){licenseStatus('Ingresa tu código de licencia.');return;}
+  if(!crypto?.subtle){licenseStatus('Necesitas abrir esta página mediante HTTPS en un navegador compatible.');return;}
+  if(activationPending){licenseStatus('Ya hay una activación en curso. Revisa la ventana abierta.');return;}
+  const popup=window.open('about:blank','cac_activacion','width=510,height=650');
+  if(!popup){licenseStatus('Permite las ventanas emergentes para activar tu licencia.');return;}
+  activationPopup=popup;
+  activationNonce=randomHex();
+  activationPending=true;
+  const url=new URL(LICENSE_SERVER);
+  url.searchParams.set('accion','activarUI');url.searchParams.set('id',license);url.searchParams.set('dispositivo',deviceId());url.searchParams.set('nonce',activationNonce);
+  licenseStatus('Completa la activación en la ventana que se abrió.');
+  popup.location.href=url.toString();
+});
+restoreLicense();
 const ids=['producto','cantidad','minutos','hora','materiales','electricidad','desgaste','empaque','otros','comision','margen'];const $=id=>document.getElementById(id);const money=n=>new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN'}).format(n||0);let last=null;const num=id=>{let n=Number($(id).value);return Number.isFinite(n)?n:0};
 function calc(){let q=num('cantidad'),c=num('comision')/100,m=num('margen')/100;if(q<=0||!Number.isInteger(q)){$('estado').textContent='La cantidad debe ser un número entero mayor que cero.';return null}if(c<0||m<0||c>=1||m>=1||c+m>=1){$('estado').textContent='La comisión y el margen deben ser menores a 100%, y su suma debe ser menor a 100%.';return null}if(ids.slice(1).some(id=>num(id)<0)){$('estado').textContent='No ingreses cantidades negativas.';return null}
 let labor=num('minutos')/60*num('hora'),total=num('materiales')+labor+num('electricidad')+num('desgaste')+num('empaque')+num('otros'),unit=total/q,price=unit/(1-c-m);if($('redondeo').checked)price=Math.ceil(price);let profit=price*(1-c)-unit,margin=price?profit/price:0,fee=price*c;last={product:$('producto').value||'Producto sin nombre',q,labor,total,unit,price,profit,margin,fee};$('precio').textContent=money(price);$('totalLote').textContent=money(total);$('costoUnitario').textContent=money(unit);$('ganancia').textContent=money(profit);$('margenReal').textContent=(margin*100).toFixed(1)+'%';$('comisionPesos').textContent=money(fee);$('detalle').textContent=`Para ${q} piezas de ${last.product}, tu costo estimado es ${money(unit)} por pieza.`;$('estado').textContent='Cálculo actualizado.';return last}
