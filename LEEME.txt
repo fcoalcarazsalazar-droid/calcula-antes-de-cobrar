@@ -1,0 +1,6 @@
+ACTUALIZACION - CALCULA ANTES DE COBRAR
+
+Sube estos seis archivos a la raiz de tu repositorio GitHub, reemplazando los anteriores: index.html, manifest.webmanifest, sw.js, icon.svg, icon-192.png e icon-512.png. No subas el ZIP ni la carpeta. Pulsa Commit changes y espera a que GitHub Pages publique.
+
+En Android abre la pagina en Chrome. Si no aparece el aviso de instalacion, abre el menu ⋮ y elige Instalar aplicacion o Agregar a pantalla principal. Si ya tenias instalada la version anterior, cierra la app y vuelve a abrir la pagina.
+En iPhone: abre la pagina en Safari, toca Compartir y luego Agregar a pantalla de inicio.

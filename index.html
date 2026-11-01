@@ -28,6 +28,15 @@
 <div class="metric"><span>Costo total del lote</span><strong id="totalLote">$0.00</strong></div><div class="metric"><span>Costo por pieza</span><strong id="costoUnitario">$0.00</strong></div><div class="metric"><span>Ganancia por pieza</span><strong id="ganancia">$0.00</strong></div><div class="metric"><span>Margen estimado</span><strong id="margenReal">0%</strong></div><div class="metric"><span>Comisión por pieza</span><strong id="comisionPesos">$0.00</strong></div><div class="note" id="detalle">Ingresa tus datos para obtener el cálculo.</div><div class="warning">Esta calculadora no incluye impuestos ni gastos generales (renta, internet o administración), salvo que los agregues en “Otros costos directos”. Revisa tus obligaciones fiscales antes de fijar tu precio.</div></aside>
 </div></main><footer>Calcula antes de cobrar · Herramienta de apoyo para tomar decisiones de precio. Los resultados son estimaciones según los datos ingresados.</footer>
 <script>
+const LICENSE_PUBLIC_KEY = `-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5oEpHOAgEw7sKk2RUrO4
+EgKqOmx1vHDResXU/0IlSGSKHuJaRSdjUjFU+1+lcbW4qEUhFu+iprH46QaXtkra
+AYKPaXsfMGsKGkxd+rfllBJnyOyzXbQsOeY0Ja8Epchm2UlpwV9y/vSa+/Ms06m6
+dj3UMYCYsqgj727TFrQlCQU0wmpep3aYuMH44C2Vtbk3LzoWgbBjgyGsx/ZNhh2r
+Y5oN89nys9VU5Rac3buaP9IM7MVLO7/rOsgRaAgxFPjijzGQ6Sos53RvhxcVgDyI
+fmUOKrOvhwpy2pBY1cWlVb++EHMKVv5r+LWF1R16LE321rE2UcYH8EvOR4vQM3jG
+awIDAQAB
+-----END PUBLIC KEY-----`;
 const ids=['producto','cantidad','minutos','hora','materiales','electricidad','desgaste','empaque','otros','comision','margen'];const $=id=>document.getElementById(id);const money=n=>new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN'}).format(n||0);let last=null;const num=id=>{let n=Number($(id).value);return Number.isFinite(n)?n:0};
 function calc(){let q=num('cantidad'),c=num('comision')/100,m=num('margen')/100;if(q<=0||!Number.isInteger(q)){$('estado').textContent='La cantidad debe ser un número entero mayor que cero.';return null}if(c<0||m<0||c>=1||m>=1||c+m>=1){$('estado').textContent='La comisión y el margen deben ser menores a 100%, y su suma debe ser menor a 100%.';return null}if(ids.slice(1).some(id=>num(id)<0)){$('estado').textContent='No ingreses cantidades negativas.';return null}
 let labor=num('minutos')/60*num('hora'),total=num('materiales')+labor+num('electricidad')+num('desgaste')+num('empaque')+num('otros'),unit=total/q,price=unit/(1-c-m);if($('redondeo').checked)price=Math.ceil(price);let profit=price*(1-c)-unit,margin=price?profit/price:0,fee=price*c;last={product:$('producto').value||'Producto sin nombre',q,labor,total,unit,price,profit,margin,fee};$('precio').textContent=money(price);$('totalLote').textContent=money(total);$('costoUnitario').textContent=money(unit);$('ganancia').textContent=money(profit);$('margenReal').textContent=(margin*100).toFixed(1)+'%';$('comisionPesos').textContent=money(fee);$('detalle').textContent=`Para ${q} piezas de ${last.product}, tu costo estimado es ${money(unit)} por pieza.`;$('estado').textContent='Cálculo actualizado.';return last}
